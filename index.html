@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fishing Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>🐋 Welcome to the Fishing Game!</h1>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+    <!-- Money Display -->
+    <div id="moneyDisplay">💵 $0</div>
+
+    <!-- Shop Toggle Button -->
+    <button id="shopToggle" onclick="toggleShop()">🛍️ Shop</button>
+
+    <!-- Shop Panel -->
+    <div id="shop" style="display: none;">
+        <h2>🎣 Fishing Shop</h2>
+
+        <div>
+            <strong>Rod Level:</strong> <span id="rodLevel">1</span><br>
+            <strong>Next Rod Upgrade:</strong> $<span id="rodCost">100</span><br>
+            <button onclick="buyRod()">Upgrade Rod</button>
+        </div>
+        <hr>
+        <div>
+            <strong>Bait Level:</strong> <span id="baitLevel">1</span><br>
+            <strong>Next Bait Upgrade:</strong> $<span id="baitCost">50</span><br>
+            <button onclick="buyBait()">Upgrade Bait</button>
+        </div>
+    </div>
+
+    <!-- Upgrade Tab Toggle -->
+    <div id="upgradeToggle" onclick="toggleUpgradePanel()">Upgrades</div>
+
+    <!-- Upgrade Panel -->
+    <div id="upgradePanel">
+        <div id="upgradeItemsRow"></div>
+    </div>
+
+    <div id="zoneSelect">
+        <h3>🌎 Choose Zone</h3>
+        <button onclick="changeZone('pond')">Pond</button>
+        <button onclick="changeZone('ocean')">Ocean</button>
+        <button onclick="changeZone('abyss')">Abyss</button>
+        <button onclick="changeZone('arctic')">Arctic</button>
+    </div>
+
+    <button id="castButton" onclick="castLine()">🎣 Cast Line</button>
+
+    <!-- Bestiary + Achievements Toggle Buttons -->
+    <div id="infoButtons">
+        <button onclick="toggleBestiary()">📘 Bestiary</button>
+        <button onclick="toggleAchievements()">🏆 Achievements</button>
+    </div>
+
+    <!-- Bestiary Panel -->
+    <div id="bestiaryPanel" style="display: none;">
+        <h3>📘 Bestiary</h3>
+        <div id="bestiaryContent"></div>
+        <div id="bestiaryDetailsPanel" style="display: none;"></div>
+    </div>
+
+    <!-- Achievements Panel (placeholder for now) -->
+    <div id="achievementsPanel" style="display: none;">
+        <h3>🏆 Achievements</h3>
+        <p>Coming soon...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
